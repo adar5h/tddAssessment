@@ -8,8 +8,14 @@ RSpec.describe KataCalculator do
   end
 
   it 'adds only one number' do
-    num1, num2 = ["", "1"].sample
+    num1, num2 = ["", "1"]
     result = KataCalculator.add(num1, num2)
     expect(result).to eq(1)
+  end
+
+  it 'adds two string numbers' do
+    num1, num2 = '1', '2'
+    result = KataCalculator.add(num1, num2)
+    expect(result).to eq(3)
   end
 end
