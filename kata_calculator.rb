@@ -4,6 +4,8 @@ class KataCalculator
     all_nums = []
 
     nums.each do |num|
+      raise "negative numbers not allowed #{num}" if num.to_i.negative?
+
       if num.is_a?(String)
         nums = delimiter_specified?(num)
         all_nums.concat(nums)
