@@ -15,7 +15,11 @@ class KataCalculator
 
     negatives = []
     all_nums.each do |i|
-      negatives << i if i.to_i.negative?
+      if i.to_i.negative?
+        negatives << i
+      elsif i >= 1000
+        all_nums.delete(i)
+      end
     end
 
     raise "negative numbers not allowed #{negatives.join(', ')}" unless negatives.empty?
