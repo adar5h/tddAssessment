@@ -4,7 +4,6 @@ class KataCalculator
     all_nums = []
 
     nums.each do |num|
-      raise "negative numbers not allowed #{num}" if num.to_i.negative?
 
       if num.is_a?(String)
         nums = delimiter_specified?(num)
@@ -14,6 +13,13 @@ class KataCalculator
         all_nums << num.to_i
       end
     end
+
+    negatives = []
+    all_nums.each do |i|
+      negatives << i if i.to_i.negative?
+    end
+
+    raise "negative numbers not allowed #{negatives.join(', ')}" unless negatives.empty?
 
     all_nums.sum
   end
