@@ -44,4 +44,10 @@ RSpec.describe KataCalculator do
   it 'raises exception for negative numbers' do
     expect { KataCalculator.add("1","1","-2","-3") }.to raise_error(RuntimeError, "negative numbers not allowed -2, -3")
   end
+
+  it 'ignores number greater than 1000' do
+    num1, num2, num3 = '1', '2', '1001'
+    result = KataCalculator.add(num1, num2, num3)
+    expect(result).to eq(3)
+  end
 end

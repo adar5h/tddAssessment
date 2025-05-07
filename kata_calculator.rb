@@ -4,7 +4,6 @@ class KataCalculator
     all_nums = []
 
     nums.each do |num|
-
       if num.is_a?(String)
         nums = delimiter_specified?(num)
         all_nums.concat(nums)
