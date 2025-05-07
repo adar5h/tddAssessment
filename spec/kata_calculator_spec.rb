@@ -18,4 +18,10 @@ RSpec.describe KataCalculator do
     result = KataCalculator.add(num1, num2)
     expect(result).to eq(3)
   end
+
+  it 'adds n number of digits' do
+    num1, num2, num3 = '1', '2', '3'
+    result = KataCalculator.add(num1, num2, num3)
+    expect(result).to eq(6)
+  end
 end
