@@ -33,7 +33,12 @@ class KataCalculator
 
     if num.start_with?('//')
       delimiter_line, numbers_string = num.split("\n", 2)
-      delimiter = delimiter_line[2..] # Removed the \\ part
+
+      if delimiter_line.start_with?("//[") && delimiter_line.end_with?("]")
+        delimiter = delimiter_line[3..-2]  # Removes //[ and ]
+      else
+        delimiter = delimiter_line[2..] # Removes the // part
+      end
     end
 
     numbers = if delimiter
