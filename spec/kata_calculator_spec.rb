@@ -30,4 +30,10 @@ RSpec.describe KataCalculator do
     result = KataCalculator.add(nums)
     expect(result).to eq(6)
   end
+
+  it 'supports different delimiters' do
+    nums = "//;\n1;2"
+    result = KataCalculator.add(nums)
+    expect(result).to eq(3)
+  end
 end
