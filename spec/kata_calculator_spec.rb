@@ -24,4 +24,10 @@ RSpec.describe KataCalculator do
     result = KataCalculator.add(num1, num2, num3)
     expect(result).to eq(6)
   end
+
+  it 'accepts new line as delimiter' do
+    nums = "1\n2,3"
+    result = KataCalculator.add(nums)
+    expect(result).to eq(6)
+  end
 end
