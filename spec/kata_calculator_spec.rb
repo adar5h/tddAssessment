@@ -37,7 +37,11 @@ RSpec.describe KataCalculator do
     expect(result).to eq(3)
   end
 
-  it 'raises exception for negative numbers' do
+  it 'raises exception for negative number' do
     expect { KataCalculator.add("1","-2") }.to raise_error(RuntimeError, "negative numbers not allowed -2")
+  end
+
+  it 'raises exception for negative numbers' do
+    expect { KataCalculator.add("1","1","-2","-3") }.to raise_error(RuntimeError, "negative numbers not allowed -2")
   end
 end
