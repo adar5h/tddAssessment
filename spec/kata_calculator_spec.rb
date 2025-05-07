@@ -1,3 +1,5 @@
+require "./kata_calculator.rb"
+
 RSpec.describe KataCalculator do
   it 'add empty string' do
     num1, num2 = ["", nil].sample
