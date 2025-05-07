@@ -50,4 +50,10 @@ RSpec.describe KataCalculator do
     result = KataCalculator.add(num1, num2, num3)
     expect(result).to eq(3)
   end
+
+  it 'accepts random delimiters' do
+    nums = "//[***]\n1***2***3"
+    result = KataCalculator.add(nums)
+    expect(result).to eq(6)
+  end
 end
